@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+:root {
+  /* Кольори */
+  --color-bg: #181614;
+  --color-surface: #211e1a;
+  --color-border: #3d362e;
+  --color-text: #eee9e2;
+  --color-text-muted: #b3aaa0;
+  --color-accent: #d99c72;
+  --color-on-accent: #181614;
+
+  /* Шрифти */
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-family-heading: "Abril Fatface", Georgia, serif;
+  --weight-body: 400;
+  --weight-heading: 400;
+
+  /* Розміри тексту */
+  --size-logo: clamp(3.5rem, 9vw, 7.5rem);
+  --size-heading: clamp(1.75rem, 3vw, 2.25rem);
+  --size-repo: 1.5rem;
+  --size-stat: 1.5rem;
+  --size-body: 1rem;
+  --size-detail: 0.875rem;
+  --size-label: 0.6875rem;
+
+  /* Інтервали тексту */
+  --leading-logo: 0.95;
+  --leading-heading: 1.1;
+  --leading-body: 1.5;
+  --tracking-logo: -0.055em;
+  --tracking-label: 0.18em;
+  --case-label: uppercase;
+
+  /* Посилання-кнопка */
+  --border-accent: 1px solid var(--color-accent);
+  --link-padding: 10px 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-color: var(--color-bg);
+}
+body {
+  max-width: 1360px;
+  margin: auto;
+  padding: clamp(20px, 3.7vw, 54px);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--size-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+}
+
+input,
+button {
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.heading,
+h2,
+h3 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+}
+
+.heading {
+  color: var(--color-accent);
+  font-size: var(--size-logo);
+  line-height: var(--leading-logo);
+  letter-spacing: var(--tracking-logo);
+}
+
+h3 {
+  font-size: var(--size-repo);
+}
+
+h2 {
+  font-size: var(--size-heading);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label > span,
+.link {
+  font-size: var(--size-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+}
+
+.label > span,
+.login,
+.description {
+  color: var(--color-text-muted);
+}
+
+.link {
+  justify-self: start;
+  padding: var(--link-padding);
+  border: var(--border-accent);
+  background: transparent;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+header { display: grid; gap: 8px; }
+#search {
+  font-size: var(--size-label); letter-spacing: var(--tracking-label); text-transform: uppercase;
+}
+
+.search-bar { display: flex; gap: 8px; margin: 18px 0 30px; }
+#username { flex: 1; min-width: 0; padding: 12px 16px; color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); }
+#search { padding: 0 clamp(16px, 4vw, 56px); border: 0; background: var(--color-accent); color: var(--color-on-accent); font-weight: 700; cursor: pointer; }
+#search:hover { background: #ebaf84; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+#info { overflow-wrap: anywhere; color: var(--color-text-muted); }
+#info:has(.profile) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.9fr); gap: clamp(24px, 3.5vw, 52px); align-items: start; color: var(--color-text); }
+.profile { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px 16px; }
+.profile > :not(.label) { grid-column: 1 / -1; }
+.avatar { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; filter: grayscale(1); margin-bottom: 6px; }
+.profile .label { margin: 8px 0; font: 400 var(--size-stat)/1.25 var(--font-family-heading); color: var(--color-accent); }
+.profile .label + .label { border-left: 1px solid var(--color-border); padding-left: 16px; }
+.label span { font-family: var(--font-family); }
+section h2 { padding-bottom: 16px; border-bottom: 1px solid var(--color-border); }
+section > p { padding-block: 16px; }
+li { display: grid; grid-template-columns: minmax(0, 1fr) 7rem 4rem auto; grid-template-areas: "title lang stars link" "desc lang stars link"; align-items: center; gap: 6px 16px; padding: 18px 0; border-bottom: 1px solid var(--color-border); }
+li h3 { grid-area: title; }
+.description { grid-area: desc; }
+li .label { grid-area: lang; gap: 4px; }
+li .label + .label { grid-area: stars; }
+li a { grid-area: link; color: var(--color-text); text-underline-offset: 4px; }
+li a:hover { color: var(--color-accent); }
+li .label, li a, .description { font-size: var(--size-detail); }
+@media (max-width: 950px) {
+  li { grid-template-columns: auto auto 1fr; grid-template-areas: "title title title" "desc desc desc" "lang stars link"; }
+  li a { justify-self: end; }
+}
+@media (max-width: 640px) {
+  #info:has(.profile) { grid-template-columns: 1fr; }
+  .avatar { max-width: 210px; }
+
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--size-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+}

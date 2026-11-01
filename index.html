@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DevFinder — GitHub Profile Finder</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="heading">DevFinder</h1>
+      <p class="subtitle">Built with GitHub API</p>
+      <div class="search-bar">
+        <input
+          id="username"
+          aria-label="GitHub username"
+          placeholder="Enter a GitHub username..."
+        />
+        <button id="search">SEARCH</button>
+      </div>
+    </header>
+    <main>
+      <div id="info" aria-live="polite">
+        Search by username to explore a GitHub profile.
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
