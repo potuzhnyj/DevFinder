@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
 :root {
-  /* Кольори */
   --color-bg: #181614;
   --color-surface: #211e1a;
   --color-border: #3d362e;
@@ -10,13 +9,11 @@
   --color-accent: #d99c72;
   --color-on-accent: #181614;
 
-  /* Шрифти */
   --font-family: Arial, Helvetica, sans-serif;
   --font-family-heading: "Abril Fatface", Georgia, serif;
   --weight-body: 400;
   --weight-heading: 400;
 
-  /* Розміри тексту */
   --size-logo: clamp(3.5rem, 9vw, 7.5rem);
   --size-heading: clamp(1.75rem, 3vw, 2.25rem);
   --size-repo: 1.5rem;
@@ -25,7 +22,6 @@
   --size-detail: 0.875rem;
   --size-label: 0.6875rem;
 
-  /* Інтервали тексту */
   --leading-logo: 0.95;
   --leading-heading: 1.1;
   --leading-body: 1.5;
@@ -33,7 +29,6 @@
   --tracking-label: 0.18em;
   --case-label: uppercase;
 
-  /* Посилання-кнопка */
   --border-accent: 1px solid var(--color-accent);
   --link-padding: 10px 16px;
 }
