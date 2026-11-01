@@ -1,4 +1,7 @@
-<img src="./favicon.svg" width="32" height="32" alt="">
+<p align="center">
+  <img src="./favicon.svg" alt="devfinder logo" width="128" />
+</p>
+
 # DevFinder
 
 Search for a GitHub username to see the developer’s profile, follower count, and up to five public repositories. Each repository includes its description, primary language, star count, and a link to GitHub.
